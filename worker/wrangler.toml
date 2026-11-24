@@ -1,0 +1,29 @@
+name = "portfolio-chat"
+main = "src/index.ts"
+compatibility_date = "2026-11-01"
+compatibility_flags = ["nodejs_compat"]
+
+# Public, non-secret settings. The API key is NOT here: it is stored as an encrypted
+# Worker secret (ANTHROPIC_API_KEY), uploaded by .github/workflows/deploy-chat.yml.
+[vars]
+ALLOWED_ORIGINS = "https://burcuxx.github.io,http://localhost:3000"
+MODEL = "claude-haiku-5-5"
+DAILY_LIMIT = "10"
+
+# At most 10 messages per minute from one visitor IP.
+[[ratelimits]]
+name = "CHAT_LIMITER"
+namespace_id = "1001"
+
+  [ratelimits.simple]
+  limit = 10
+  period = 60
+
+# Daily question allowance per visitor (see src/quota.ts). Created automatically on deploy.
+[[durable_objects.bindings]]
+name = "QUOTA"
+class_name = "DailyQuota"
+
+[[migrations]]
+tag = "v1"
+new_sqlite_classes = ["DailyQuota"]

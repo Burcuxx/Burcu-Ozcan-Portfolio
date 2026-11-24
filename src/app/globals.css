@@ -1,0 +1,59 @@
+@import "tailwindcss";
+
+/* Palette taken from the CV: terracotta band, peach header, rust headings. */
+:root {
+  --background: #fbf8f5;
+  --surface: #ffffff;
+  --peach: #f6e6d9;
+  --terracotta: #b5603b;
+  --rust: #7a2e1a;
+  --accent: #b5552f;
+  --ring: #e0b49a;
+  --foreground: #2a211d;
+  --muted: #6b5a51;
+  --line: #e8d5c7;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #1c1512;
+    --surface: #261c18;
+    --peach: #2e211c;
+    --terracotta: #c8714b;
+    --rust: #f0b394;
+    --accent: #e88a60;
+    --ring: #8a5a43;
+    --foreground: #f3e9e2;
+    --muted: #c4ad9f;
+    --line: #3d2d26;
+  }
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-surface: var(--surface);
+  --color-peach: var(--peach);
+  --color-terracotta: var(--terracotta);
+  --color-rust: var(--rust);
+  --color-accent: var(--accent);
+  --color-ring-photo: var(--ring);
+  --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-line: var(--line);
+  --font-sans: var(--font-lexend);
+  --font-serif: var(--font-dm-serif);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+}
+
+::selection {
+  background: var(--ring);
+  color: var(--rust);
+}
