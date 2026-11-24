@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { ThemeToggle } from "./ThemeToggle";
 
 type NavItem = { href: string; label: string };
 
@@ -36,10 +37,11 @@ export function SiteHeader({ nav, email }: { nav: NavItem[]; email: string }) {
             </li>
           ))}
         </ul>
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-1 sm:gap-2">
+          <ThemeToggle />
           <a
             href={`mailto:${email}`}
-            className="rounded-full bg-terracotta px-4 py-1.5 text-sm font-medium text-white transition hover:brightness-110 dark:text-background"
+            className="rounded-full bg-terracotta px-4 py-1.5 text-sm font-medium text-on-terracotta transition hover:brightness-110"
           >
             Hire me
           </a>

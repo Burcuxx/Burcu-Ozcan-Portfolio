@@ -99,7 +99,7 @@ export default function Home() {
               <div className="mt-6 flex flex-wrap justify-center gap-3 sm:justify-start">
                 <a
                   href="#projects"
-                  className="rounded-full bg-terracotta px-5 py-2.5 text-sm font-medium text-white transition hover:brightness-110 dark:text-background"
+                  className="rounded-full bg-terracotta px-5 py-2.5 text-sm font-medium text-on-terracotta transition hover:brightness-110"
                 >
                   View my work
                 </a>
@@ -294,7 +294,7 @@ export default function Home() {
             <div className="mt-8 flex flex-wrap justify-center gap-3">
               <a
                 href={`mailto:${profile.email}`}
-                className="rounded-full bg-terracotta px-6 py-3 font-medium text-white transition hover:brightness-110 dark:text-background"
+                className="rounded-full bg-terracotta px-6 py-3 font-medium text-on-terracotta transition hover:brightness-110"
               >
                 {profile.email}
               </a>
@@ -319,7 +319,7 @@ export default function Home() {
         </section>
       </main>
 
-      <footer className="bg-terracotta text-center text-sm text-white/90 dark:text-background">
+      <footer className="bg-terracotta text-center text-sm text-on-terracotta/90">
         <Wave className="rotate-180 text-peach" />
         <p className="px-4 pt-2 pb-6">
           ©{" "}

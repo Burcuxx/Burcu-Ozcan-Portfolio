@@ -198,7 +198,7 @@ export function ChatWidget({ apiUrl }: { apiUrl: string }) {
         aria-expanded={open}
         aria-controls="chat-panel"
         aria-label={open ? "Close chat" : "Ask about Burcu"}
-        className="fixed right-4 bottom-4 z-40 flex items-center gap-2 rounded-full bg-terracotta px-4 py-3 font-medium text-white shadow-lg shadow-terracotta/30 transition hover:brightness-110 sm:right-6 sm:bottom-6 dark:text-background"
+        className="fixed right-4 bottom-4 z-40 flex items-center gap-2 rounded-full bg-terracotta px-4 py-3 font-medium text-on-terracotta shadow-lg shadow-terracotta/30 transition hover:brightness-110 sm:right-6 sm:bottom-6"
       >
         <svg
           viewBox="0 0 24 24"
@@ -292,7 +292,7 @@ export function ChatWidget({ apiUrl }: { apiUrl: string }) {
                   <p
                     className={`max-w-[85%] rounded-2xl px-3 py-2 text-sm leading-relaxed whitespace-pre-wrap ${
                       m.role === "user"
-                        ? "bg-terracotta text-white dark:text-background"
+                        ? "bg-terracotta text-on-terracotta"
                         : "bg-peach text-foreground"
                     }`}
                   >
@@ -360,7 +360,7 @@ export function ChatWidget({ apiUrl }: { apiUrl: string }) {
                 type="submit"
                 disabled={busy || limitReached || !input.trim()}
                 aria-label="Send"
-                className="grid size-10 shrink-0 place-items-center rounded-full bg-terracotta text-white transition hover:brightness-110 disabled:opacity-40 dark:text-background"
+                className="grid size-10 shrink-0 place-items-center rounded-full bg-terracotta text-on-terracotta transition hover:brightness-110 disabled:opacity-40"
               >
                 <svg
                   viewBox="0 0 24 24"

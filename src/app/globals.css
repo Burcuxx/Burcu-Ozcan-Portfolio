@@ -1,11 +1,19 @@
 @import "tailwindcss";
 
-/* Palette taken from the CV: terracotta band, peach header, rust headings. */
+/*
+ * Palette taken from the CV: terracotta band, peach header, rust headings.
+ *
+ * Theme selection: with no saved choice the site follows the device setting
+ * (prefers-color-scheme). The theme toggle saves an explicit choice, which an inline
+ * script in <head> applies as <html data-theme="light|dark"> before the first paint.
+ */
 :root {
+  color-scheme: light dark;
   --background: #fbf8f5;
   --surface: #ffffff;
   --peach: #f6e6d9;
   --terracotta: #b5603b;
+  --on-terracotta: #ffffff;
   --rust: #7a2e1a;
   --accent: #b5552f;
   --ring: #e0b49a;
@@ -14,12 +22,18 @@
   --line: #e8d5c7;
 }
 
+:root[data-theme="light"] {
+  color-scheme: light;
+}
+
+/* The dark palette, applied by the device setting or by an explicit choice. */
 @media (prefers-color-scheme: dark) {
-  :root {
+  :root:not([data-theme="light"]) {
     --background: #1c1512;
     --surface: #261c18;
     --peach: #2e211c;
     --terracotta: #c8714b;
+    --on-terracotta: #1c1512;
     --rust: #f0b394;
     --accent: #e88a60;
     --ring: #8a5a43;
@@ -29,11 +43,27 @@
   }
 }
 
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --background: #1c1512;
+  --surface: #261c18;
+  --peach: #2e211c;
+  --terracotta: #c8714b;
+  --on-terracotta: #1c1512;
+  --rust: #f0b394;
+  --accent: #e88a60;
+  --ring: #8a5a43;
+  --foreground: #f3e9e2;
+  --muted: #c4ad9f;
+  --line: #3d2d26;
+}
+
 @theme inline {
   --color-background: var(--background);
   --color-surface: var(--surface);
   --color-peach: var(--peach);
   --color-terracotta: var(--terracotta);
+  --color-on-terracotta: var(--on-terracotta);
   --color-rust: var(--rust);
   --color-accent: var(--accent);
   --color-ring-photo: var(--ring);
@@ -56,4 +86,35 @@ body {
 ::selection {
   background: var(--ring);
   color: var(--rust);
+}
+
+/* Theme toggle icons: decided in CSS so the right one shows before hydration. */
+.theme-icon-sun {
+  display: none;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .theme-icon-sun {
+    display: block;
+  }
+  :root:not([data-theme="light"]) .theme-icon-moon {
+    display: none;
+  }
+}
+:root[data-theme="dark"] .theme-icon-sun {
+  display: block;
+}
+:root[data-theme="dark"] .theme-icon-moon {
+  display: none;
+}
+
+/* Short colour cross-fade while the theme is switched (class added by ThemeToggle). */
+.theme-transition,
+.theme-transition *,
+.theme-transition *::before,
+.theme-transition *::after {
+  transition:
+    background-color 0.25s ease,
+    border-color 0.25s ease,
+    color 0.25s ease,
+    fill 0.25s ease !important;
 }
