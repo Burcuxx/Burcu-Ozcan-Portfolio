@@ -55,7 +55,7 @@ export const faq: { question: string; answer: string }[] = [
   {
     question: "Does she have e-commerce experience?",
     answer:
-      "Yes, a lot. At Proj-e she built the frontend for 20+ projects, many of them mobile-first online stores, rendering product and order data with ASP.NET Razor and connecting the frontend to REST APIs. At Innevera Interactive, e-commerce made up 60% of her projects. Her selected sites include newbalance.com.tr and monsternotebook.de.",
+      "Yes, a lot. At Proj-e she built the frontend for 20+ projects, many of them mobile-first online stores built with pure JavaScript, Bootstrap and Sass on an ASP.NET and C# backend. She rendered product and order data with Razor and connected the frontend to REST APIs. At Innevera Interactive, e-commerce made up 60% of her projects. Her selected sites include newbalance.com.tr and monsternotebook.de.",
   },
   {
     question: "How does she work with designers?",

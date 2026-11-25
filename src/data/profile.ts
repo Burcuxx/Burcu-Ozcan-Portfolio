@@ -159,15 +159,15 @@ export const projects: Project[] = [
     name: "E-commerce websites",
     kind: "E-commerce",
     description:
-      "Mobile-first online stores built with pure JavaScript, Bootstrap and Sass. I worked across the C# / ASP.NET stack, rendering product and order data with Razor syntax and connecting the frontend to REST APIs.",
-    tags: ["Vanilla JS", "Bootstrap", "Sass", "C#", "ASP.NET Razor", "REST API"],
+      "Mobile-first online stores built with pure JavaScript, Bootstrap and Sass on an ASP.NET and C# backend. I rendered product and order data with Razor syntax and connected the frontend to REST APIs.",
+    tags: ["Vanilla JS", "Bootstrap", "Sass", "ASP.NET", "C#", "Razor", "REST API"],
   },
   {
     name: "ATS CV Checker",
     kind: "Web tool",
     description:
-      "A free, fully client-side tool that checks whether a CV is ATS-friendly. It parses PDF, DOCX and TXT (including two-column layouts), scores format, structure and content, lists prioritised fixes and matches the CV against a job posting. Turkish / English interface.",
-    tags: ["HTML", "CSS", "Vanilla JS", "pdf.js", "mammoth.js", "i18n"],
+      "A free, fully client-side tool that checks whether a CV is ATS-friendly. It parses PDF, DOCX and TXT (including two-column layouts), scores format, structure and content, lists prioritised fixes and matches the CV against a job posting.",
+    tags: ["HTML", "CSS", "Vanilla JS", "pdf.js", "mammoth.js"],
     href: "https://burcuxx.github.io/ats-checker/",
   },
   {
